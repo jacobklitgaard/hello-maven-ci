@@ -35,8 +35,7 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t ghcr.io/${{ github.repository_owner }}/hello-maven:latest .
-        docker build -t ghcr.io/${{ github.repository_owner }}/hello-maven:${{ github.sha }} .
+        docker build -t ghcr.io/${{ github.repository_owner }}/hello-maven:latest -t ghcr.io/${{ github.repository_owner }}/hello-maven:${{ github.sha }} .
         docker push ghcr.io/${{ github.repository_owner }}/hello-maven:latest
         docker push ghcr.io/${{ github.repository_owner }}/hello-maven:${{ github.sha }}
 
